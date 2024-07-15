@@ -1,0 +1,16 @@
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\bin\Debug\Perpustakaan.exe.config
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\bin\Debug\Perpustakaan.exe
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\bin\Debug\Perpustakaan.pdb
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.csproj.AssemblyReference.cache
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.Form1.resources
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.Properties.Resources.resources
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.csproj.GenerateResource.cache
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.csproj.CoreCompileInputs.cache
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.exe
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.pdb
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.Pustakawan.resources
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.Anggota.resources
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.Buku.resources
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.Login.resources
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.Pengembalian.resources
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.Laporan.resources
