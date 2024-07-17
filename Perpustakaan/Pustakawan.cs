@@ -12,9 +12,16 @@ namespace Perpustakaan
 {
     public partial class Pustakawan : Form
     {
+        Module md = new Module();
+
         public Pustakawan()
         {
             InitializeComponent();
+        }
+
+        private void Pustakawan_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = md.getData("SELECT * FROM pustakawan");
         }
     }
 }
