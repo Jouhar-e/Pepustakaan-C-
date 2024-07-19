@@ -190,5 +190,10 @@ namespace Perpustakaan
             return false;
         }
 
+        public void pesan(string s)
+        {
+            MessageBox.Show(s);
+        }
+
     }
 }
