@@ -24,6 +24,11 @@ namespace Perpustakaan
 
         public void awal()
         {
+            object v = md.getValue("SELECT * FROM pustakawan WHERE idpustakawan = 1", "alamat");
+            md.pesan(v+"");
+
+            md.exc("INSERT INTO pustakawan VALUES ('dia','dua','satu','tiga')");
+
             dataGridView1.DataSource = md.getData("SELECT * FROM pustakawan WHERE namapustakawan LIKE '%"+ textBox1.Text +"%'");
             md.clearForm(groupBox2);
             dataGridView1.Columns[0].Visible = false;
@@ -107,21 +112,28 @@ namespace Perpustakaan
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (aksi)
+            if (md.adaKosong(groupBox2))
             {
-                sql = "INSERT INTO pustakawan VALUES ('"+textBox2.Text+ "','"+textBox3.Text+ "','"+textBox4.Text+"','"+textBox5.Text+"')";
-                //md.pesan(sql);
-                md.exc(sql);
-                md.pesan("Berhasil Ditambahkan");
-                awal();
+                MessageBox.Show("Data masih kosong");
             }
             else
             {
-                sql = "UPDATE pustakawan SET namapustakawan = '"+ textBox2.Text + "',alamat = '"+ textBox3.Text +"',username = '"+ textBox4.Text +"',password='"+textBox5.Text+"' WHERE idpustakawan = "+id;
-                //md.pesan(sql);
-                md.exc(sql);
-                md.pesan("Berhasil Diubah");
-                awal();
+                if (aksi)
+                {
+                    sql = "INSERT INTO pustakawan VALUES ('" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "')";
+                    //md.pesan(sql);
+                    md.exc(sql);
+                    md.pesan("Berhasil Ditambahkan");
+                    awal();
+                }
+                else
+                {
+                    sql = "UPDATE pustakawan SET namapustakawan = '" + textBox2.Text + "',alamat = '" + textBox3.Text + "',username = '" + textBox4.Text + "',password='" + textBox5.Text + "' WHERE idpustakawan = " + id;
+                    //md.pesan(sql);
+                    md.exc(sql);
+                    md.pesan("Berhasil Diubah");
+                    awal();
+                }
             }
         }
 

@@ -35,6 +35,7 @@ namespace Perpustakaan
             cmd.Dispose();
         }
 
+        //menampilakan data tabel
         public DataTable getData(string sql)
         {
             koneksi();
@@ -58,6 +59,7 @@ namespace Perpustakaan
             }
         }
 
+        //digunakan untuk menampillkan jumlah data
         public int getCount(string sql)
         {
             koneksi();
@@ -118,6 +120,7 @@ namespace Perpustakaan
             }
         }
 
+        //untuk mengeksekusi code
         public bool exc(string sql)
         {
             koneksi();
@@ -138,6 +141,7 @@ namespace Perpustakaan
             }
         }
 
+        //untuk mengecek apakah properti yang ada didalam groupbox apakah masih kosong
         public bool adaKosong(GroupBox gb)
         {
             foreach (Control ct in gb.Controls)
@@ -145,11 +149,15 @@ namespace Perpustakaan
                 if (ct is TextBox textBox && textBox.Text.Trim() == string.Empty)
                 {
                     return true;
+                }else if(ct is PictureBox pc && pc.ImageLocation.Trim() == string.Empty)
+                {
+                    return true;
                 }
             }
             return false;
         }
 
+        //untuk menghapus data properti yang ada didalam groupbox
         public void clearForm(GroupBox gb)
         {
             foreach (Control ct in gb.Controls)
@@ -169,6 +177,7 @@ namespace Perpustakaan
             }
         }
 
+        //agar textbox tertentu hanya bisa diisi dengan angka
         public void onlyNumber(KeyPressEventArgs e)
         {
             if (e.KeyChar != (char)Keys.Back)
@@ -180,6 +189,7 @@ namespace Perpustakaan
             }
         }
 
+        //untuk menampikan pesan eksekusi
         public bool dialogForm(string s)
         {
             DialogResult a = MessageBox.Show(s, "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -190,6 +200,7 @@ namespace Perpustakaan
             return false;
         }
 
+        //pengganti untuk messagebox
         public void pesan(string s)
         {
             MessageBox.Show(s);

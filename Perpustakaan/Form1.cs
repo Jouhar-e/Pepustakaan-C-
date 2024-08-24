@@ -17,6 +17,8 @@ namespace Perpustakaan
             InitializeComponent();
         }
 
+        Module md = new Module();
+
         private void pustakawanToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Pustakawan pustakawan = new Pustakawan();
@@ -37,8 +39,8 @@ namespace Perpustakaan
 
         private void pengembalianToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Pengembalian pengembalian = new Pengembalian();
-            pengembalian.ShowDialog();
+            Pengembalian p = new Pengembalian();
+            p.ShowDialog();
         }
 
         private void laporanToolStripMenuItem_Click(object sender, EventArgs e)
@@ -51,6 +53,18 @@ namespace Perpustakaan
         {
             Login login = new Login();
             login.ShowDialog();
+        }
+
+        void getCombo()
+        {
+            comboBox1.DataSource = md.getData("SELECT * FROM status");
+            comboBox1.DisplayMember = "status";
+            comboBox1.ValueMember = "idstatus";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            getCombo();
         }
     }
 }
