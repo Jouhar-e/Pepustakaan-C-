@@ -31,7 +31,7 @@ namespace Perpustakaan
             //{
             //    md.pesan("Username atau Password Salah");
             //}
-
+            this.Hide();
             form.ShowDialog();
         }
 

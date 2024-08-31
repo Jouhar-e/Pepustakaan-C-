@@ -55,6 +55,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -148,6 +150,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Peminjaman";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lPustakawan
             // 
@@ -172,6 +175,8 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox2.Controls.Add(this.button5);
+            this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.comboBox1);
@@ -260,9 +265,10 @@
             // 
             // textBox3
             // 
+            this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(658, 160);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(244, 22);
+            this.textBox3.Size = new System.Drawing.Size(170, 22);
             this.textBox3.TabIndex = 6;
             // 
             // label4
@@ -276,6 +282,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(658, 132);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(244, 22);
@@ -314,8 +321,30 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 96);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(505, 367);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(834, 160);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(68, 23);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "Cari";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(899, 40);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 15;
+            this.button5.Text = "Batal";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 
@@ -359,7 +388,6 @@
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
@@ -371,6 +399,9 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button4;
+        public System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button button5;
     }
 }
 

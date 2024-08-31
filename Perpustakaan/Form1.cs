@@ -18,6 +18,18 @@ namespace Perpustakaan
         }
 
         Module md = new Module();
+        public string idbuku, nbuku;
+
+        public void setTextbox(string buku)
+        {
+            textBox3.Text = buku;
+            nbuku = buku;
+        }
+
+        public void getAnggota()
+        {
+            dataGridView1.DataSource = md.getData("SELECT * FROM anggota WHERE namaanggota LIKE '%" + textBox1.Text + "%'");
+        }
 
         private void pustakawanToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -65,6 +77,32 @@ namespace Perpustakaan
         private void Form1_Load(object sender, EventArgs e)
         {
             getCombo();
+            getAnggota();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            groupBox2.Enabled = true;
+            md.clearForm(groupBox2);
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            CariBuku cr = new CariBuku(this);
+            cr.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            md.pesan(idbuku);
         }
     }
 }
