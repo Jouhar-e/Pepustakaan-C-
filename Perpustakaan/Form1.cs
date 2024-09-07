@@ -18,13 +18,7 @@ namespace Perpustakaan
         }
 
         Module md = new Module();
-        public string idbuku, nbuku;
-
-        public void setTextbox(string buku)
-        {
-            textBox3.Text = buku;
-            nbuku = buku;
-        }
+        public string idbuku, nbuku, idanggonta;
 
         public void getAnggota()
         {
@@ -91,6 +85,7 @@ namespace Perpustakaan
             if (e.RowIndex >= 0)
             {
                 textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                idanggonta = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             }
         }
 
@@ -98,6 +93,28 @@ namespace Perpustakaan
         {
             CariBuku cr = new CariBuku(this);
             cr.ShowDialog();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            getAnggota();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (idbuku == "0" || idanggonta == "0")
+            {
+                md.pesan("Data tidak boleh kosong");
+            }
+            else
+            {
+                string sql = "INSERT INTO transaksi VALUES (1,'"+ idanggonta + "','"+ idbuku +"','"+ comboBox1.SelectedValue +"','"+ dateTimePicker1.Value.ToString("yyyy/MM/dd") +"','')";
+                //md.pesan(sql);
+                md.exc(sql);
+                md.pesan("Peminjaman berhasil");
+                md.clearForm(groupBox2);
+                groupBox2.Enabled = false;
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)

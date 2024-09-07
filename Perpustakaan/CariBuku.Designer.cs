@@ -86,6 +86,7 @@
             this.ClientSize = new System.Drawing.Size(586, 496);
             this.Controls.Add(this.groupBox1);
             this.Name = "CariBuku";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CariBuku";
             this.Load += new System.EventHandler(this.CariBuku_Load);
             this.groupBox1.ResumeLayout(false);

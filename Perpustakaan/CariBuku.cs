@@ -30,10 +30,10 @@ namespace Perpustakaan
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0) {
-                string data = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                f1.textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 f1.idbuku = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                f1.setTextbox(data);
-                md.pesan(data);
+                //md.pesan(data);
+                this.Close();
             }
         }
     }
