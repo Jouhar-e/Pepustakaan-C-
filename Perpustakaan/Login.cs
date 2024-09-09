@@ -12,6 +12,7 @@ namespace Perpustakaan
 {
     public partial class Login : Form
     {
+
         public Login()
         {
             InitializeComponent();
@@ -21,18 +22,27 @@ namespace Perpustakaan
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
-            string sql = "SELECT * FROM pustakawan WHERE username = '"+ textBox1.Text +"' AND password = '"+textBox2.Text+"'";
-            //if (md.getCount(sql) > 0)
-            //{
-            //    md.pesan("ada Data");
-            //}
-            //else
-            //{
-            //    md.pesan("Username atau Password Salah");
-            //}
-            this.Hide();
-            form.ShowDialog();
+            Form1 f1 = new Form1();
+            string sql = "SELECT * FROM pustakawan WHERE username = '" + textBox1.Text + "' AND password = '" + textBox2.Text + "'";
+            if (textBox1.Text == "" || textBox2.Text == "")
+            {
+                md.pesan("Username atau password kosong");
+            }
+            else
+            {
+                if (md.getCount(sql) > 0)
+                {
+                    md.pesan("Login Berhasil");
+                    f1.lPustakawan.Text = md.getValue(sql, "namapustakawan");
+                    f1.idpustakawan = md.getValue(sql, "idpustakawan");
+                    this.Hide();
+                    f1.Show();
+                }
+                else
+                {
+                    md.pesan("Username atau Password Salah");
+                }
+            }
         }
 
         private void Login_Load(object sender, EventArgs e)

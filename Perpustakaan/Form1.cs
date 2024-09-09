@@ -18,7 +18,7 @@ namespace Perpustakaan
         }
 
         Module md = new Module();
-        public string idbuku, nbuku, idanggonta;
+        public string idbuku, nbuku, idanggonta, idpustakawan;
 
         public void getAnggota()
         {
@@ -33,7 +33,7 @@ namespace Perpustakaan
 
         private void anggotaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Anggota anggota = new Anggota();    
+            Anggota anggota = new Anggota();
             anggota.ShowDialog();
         }
 
@@ -45,7 +45,7 @@ namespace Perpustakaan
 
         private void pengembalianToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Pengembalian p = new Pengembalian();
+            Pengembalian p = new Pengembalian(this);
             p.ShowDialog();
         }
 
@@ -55,10 +55,11 @@ namespace Perpustakaan
             laporan.ShowDialog();
         }
 
+        Login login = new Login();
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.ShowDialog();
+            this.Close();
+            login.Show();
         }
 
         void getCombo()
@@ -92,12 +93,23 @@ namespace Perpustakaan
         private void button4_Click(object sender, EventArgs e)
         {
             CariBuku cr = new CariBuku(this);
-            cr.ShowDialog();
+            cr.Show();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             getAnggota();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            groupBox2.Enabled = false;
+            md.clearForm(groupBox2);
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            login.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -108,7 +120,7 @@ namespace Perpustakaan
             }
             else
             {
-                string sql = "INSERT INTO transaksi VALUES (1,'"+ idanggonta + "','"+ idbuku +"','"+ comboBox1.SelectedValue +"','"+ dateTimePicker1.Value.ToString("yyyy/MM/dd") +"','')";
+                string sql = "INSERT INTO transaksi VALUES ('" + idpustakawan + "','" + idanggonta + "','" + idbuku + "','" + comboBox1.SelectedValue + "','" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "','')";
                 //md.pesan(sql);
                 md.exc(sql);
                 md.pesan("Peminjaman berhasil");

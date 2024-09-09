@@ -217,6 +217,7 @@
             this.button3.TabIndex = 13;
             this.button3.Text = "Batal";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -347,7 +348,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Menu Utama";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -373,7 +375,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lPustakawan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.Label label6;
@@ -391,6 +392,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button4;
         public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.Label lPustakawan;
     }
 }
 
