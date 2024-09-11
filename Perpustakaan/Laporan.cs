@@ -102,6 +102,8 @@ namespace Perpustakaan
 
                 MessageBox.Show("Ekspor Berhasil");
             }
+
+            //Kode Untuk Langsung Menjadi Excel
             //if (dataGridView1.Rows.Count > 0)
             //{
             //    Microsoft.Office.Interop.Excel.ApplicationClass MExcel = new Microsoft.Office.Interop.Excel.ApplicationClass();
