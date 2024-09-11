@@ -109,7 +109,7 @@ namespace Perpustakaan
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            login.Show();
+            login.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)

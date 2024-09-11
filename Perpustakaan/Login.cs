@@ -49,5 +49,12 @@ namespace Perpustakaan
         {
 
         }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form1 f1 = new Form1();
+            f1.Close();
+            //this.Close();
+        }
     }
 }

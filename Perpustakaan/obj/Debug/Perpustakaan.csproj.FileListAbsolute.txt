@@ -15,3 +15,6 @@ D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.csp
 D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.exe
 D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.pdb
 D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.CariBuku.resources
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\bin\Debug\Microsoft.Office.Interop.Excel.dll
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\bin\Debug\stdole.dll
+D:\Project\Visual Studio\C#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.csproj.CopyComplete
