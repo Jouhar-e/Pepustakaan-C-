@@ -120,12 +120,15 @@ namespace Perpustakaan
             }
             else
             {
-                string sql = "INSERT INTO transaksi VALUES ('" + idpustakawan + "','" + idanggonta + "','" + idbuku + "','" + comboBox1.SelectedValue + "','" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "','')";
-                //md.pesan(sql);
-                md.exc(sql);
-                md.pesan("Peminjaman berhasil");
-                md.clearForm(groupBox2);
-                groupBox2.Enabled = false;
+                if (md.dialogForm("Apakah anda yakin ingin menyimpan data ini?"))
+                {
+                    string sql = "INSERT INTO transaksi VALUES ('" + idpustakawan + "','" + idanggonta + "','" + idbuku + "','" + comboBox1.SelectedValue + "','" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "',NULL)";
+                    //md.pesan(sql);
+                    md.exc(sql);
+                    md.pesan("Peminjaman berhasil");
+                    md.clearForm(groupBox2);
+                    groupBox2.Enabled = false;
+                }
             }
         }
 
